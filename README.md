@@ -1,6 +1,6 @@
-# WebTrenios
+# Web Treinos
 
-WebTrenios é uma aplicação web de gerenciamento de treinos
+Web Treinos é uma aplicação web de gerenciamento de treinos
 
 ## Funcionalidades
 
