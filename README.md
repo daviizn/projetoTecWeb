@@ -32,7 +32,7 @@ git clone https://github.com/daviizn/projetoTecWeb
 Acesse a pasta do projeto e instale as dependências:
 
 ```bash
-cd web-trenios
+cd WebTrenios
 npm install
 ```
 
