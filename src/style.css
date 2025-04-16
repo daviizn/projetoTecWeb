@@ -1,0 +1,284 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+.logo {
+  width: 600px;
+  height: auto;
+}
+
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+  padding: 16px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#app {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  flex: 1;
+}
+
+header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: clamp(24px, 4vw, 32px);
+}
+
+nav {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+nav button {
+  flex: 1 1 150px;
+  padding: 12px;
+  font-size: clamp(14px, 2vw, 16px);
+  min-width: 120px;
+  background-color: #34495e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+nav button.active {
+  background-color: #2980b9;
+}
+
+section {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+section h2 {
+  font-size: clamp(20px, 3vw, 24px);
+  margin-bottom: 16px;
+  color: #2c3e50;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-size: clamp(14px, 2vw, 16px);
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: clamp(14px, 2vw, 16px);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 32px;
+}
+
+textarea {
+  min-height: 96px;
+  max-height: 300px;
+  resize: none; 
+  line-height: 1.5;
+  overflow-y: auto; 
+  white-space: pre-wrap; 
+  word-break: break-word; 
+}
+
+button[type="submit"] {
+  background-color: #27ae60;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: clamp(14px, 2vw, 16px);
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.treino-list {
+  list-style: none;
+  display: grid;
+  gap: 16px;
+}
+
+.treino-item {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+  padding-right: 112px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.treino-item h3 {
+  color: #2980b9;
+  font-size: clamp(16px, 3vw, 20px);
+  margin-bottom: 12px;
+}
+
+.treino-item p {
+  white-space: pre-line;
+  word-break: break-word;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.treino-item p:nth-of-type(3) {
+  white-space: pre-wrap;      
+  word-break: break-word;     
+  overflow-y: auto;           
+  max-height: 7.5em;           
+  line-height: 1.5em;          
+  padding-right: 8px;          
+}
+
+.treino-item p:nth-of-type(3)::-webkit-scrollbar {
+  width: 6px;                  
+}
+
+.treino-item p:nth-of-type(3)::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;   
+  border-radius: 3px;          
+}
+
+.treino-item-actions {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.treino-item button {
+  padding: 6px 12px;
+  font-size: clamp(12px, 2vw, 14px);
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.treino-item .btn-edit {
+  background-color: #3498db;
+  color: white;
+  margin-right: 5px;
+}
+
+.treino-item .btn-remove {
+  background-color: #e74c3c;
+  color: white;
+  margin-left: 0;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.close-modal {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 12px;
+  }
+  
+  .treino-item {
+    padding-right: 20px;
+    padding-bottom: 56px;
+  }
+  
+  .treino-item-actions {
+    top: auto;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  textarea {
+    min-height: 128px;
+  }
+}
+
+@media (max-width: 400px) {
+  nav button {
+    flex: 1 1 100%;
+  }
+}
